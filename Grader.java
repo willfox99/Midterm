@@ -21,3 +21,12 @@
 *  "Thank you -- have a great day!"
 *  
 */
+
+public class Grader {
+  
+  public static void main(String[] args) {
+    //TODO insert your code here
+  }
+  
+  
+}
