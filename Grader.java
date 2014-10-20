@@ -1,32 +1,42 @@
 /**
-*  Calculates the grade a student receives on an examination
-*
-*  The program first prompts the user to enter the number of points possible
-*  on the exam.  Then, the program prompts for the number of items missed; if a positive
-*  number is entered, the program responds by calculating and displaying the percentage
-*  score out of 100.  If a negative number is entered, the program prints a "Thank You" message
-*  and exits.
-*  
-*  A sample interaction might be: (user input marked with '>')
-*  "Enter the number of items on the exam"
-*  >25
-*  "Enter the number of items missed"
-*  >3.5
-*  "Missing 3.5 results in a score of 86.0"
-*  "Enter the number of items missed"
-*  >0
-*  "Missing 0 results in a score of 100.0"
-*  "Enter the number of items missed"
-*  >-100
-*  "Thank you -- have a great day!"
-*  
+Will Fox 
 */
 
+import java.util.Scanner;
 public class Grader {
-  
-  public static void main(String[] args) {
-    //TODO insert your code here
-  }
-  
-  
+    
+    public static void main(String[] args) {
+        double pointsPossible = 0.0;
+        double pointsMissed = 0.0;
+        double points = 0.0;
+        
+        Scanner scnr = new Scanner(System.in);
+        System.out.println("How many points are possible?");
+        pointsPossible = scnr.nextDouble();
+        
+        while (pointsPossible > 0.0) {
+            
+            System.out.println("How many points were missed? (Negative number to exit)");
+            pointsMissed = scnr.nextDouble();
+            
+            if (pointsMissed >= 0) {
+                
+                points = pointsPossible - pointsMissed;
+                System.out.println("The grade is " + points / pointsPossible * 100);
+                
+            }else {
+                
+                System.out.print("Thank you");
+                
+                return;
+                
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    
 }
